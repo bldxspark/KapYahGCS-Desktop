@@ -1,184 +1,64 @@
+# KapYah GCS
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bldxspark/KapYahGCS/main/resources/KapYahGCS.png" alt="KapYah GCS Logo" width="500">
+  <img src="resources/KapYahGCS.png" alt="KapYah GCS Logo" width="500">
 </p>
 
----
+KapYah GCS is a Ground Control Station application for MAVLink-enabled UAV operations. It is developed for KapYah Industries Pvt. Ltd. and is based on the open-source QGroundControl platform.
 
-# KapYah Ground Control (KapYah GCS)
+## Desktop release
 
-KapYah Ground Control is a Ground Control Station application developed for **KapYah Industries Pvt. Ltd.** It is designed to provide a stable, efficient, and streamlined interface for UAV control, mission management, and operational workflows on Android devices.
+**Current release:** KapYah GCS Desktop v1.0.0
 
-This software is part of the KapYah product ecosystem and is intended to support real-world flight operations, configuration, monitoring, and diagnostics for MAVLink-enabled systems.
+The Windows installer is distributed as:
 
----
+```text
+KapYahGCS-Setup.exe
+```
 
-## Download
+The installer includes the Qt and GStreamer runtime components required for the application and RTSP video streaming.
 
-- [View Latest Release](https://github.com/bldxspark/KapYahGCS/releases)  
-- APK: `KapYah-GCS-v1.0.0.apk`
+### Desktop features
 
-### Android Installation Note
+- MAVLink vehicle communication and telemetry
+- Mission planning and flight operations
+- RTSP video-stream viewing through GStreamer
+- KapYah-branded user interface and application icons
+- Configurable video source and camera connection settings
+- Windows Start Menu and desktop shortcut installation
 
-When installing the APK manually, Android may show a warning such as *"App not installed"* or block installation.
+### Example direct-camera network configuration
 
-This can occur due to:
-- unsigned or newly signed APKs  
-- restricted install permissions  
-- Play Protect warnings  
+```text
+PC Ethernet IP: 192.168.144.100
+Subnet mask:    255.255.255.0
+Camera IP:      192.168.144.25
+RTSP URL:       rtsp://192.168.144.25:8554/main.264
+```
 
-If you trust the source:
-- enable **Install from unknown sources**  
-- allow installation via USB (if using ADB)  
-- proceed with installation when prompted  
+Camera IP addresses and RTSP paths can differ by device model and configuration.
 
----
+## Android
+
+Android support will be maintained in a separate Android release workflow.
+
+## Building
+
+KapYah GCS uses CMake and Qt 6. For Windows builds with RTSP support, configure GStreamer before building:
+
+```text
+GStreamer_ROOT_DIR=C:\sdk_and_dependencies\gstreamer\1.0\msvc_x86_64
+```
 
 ## Company
 
-- Company: **KapYah Industries Pvt. Ltd.**  
-- Website: https://www.kapyah.com/  
-- Product: **KapYah Ground Control**
+- Product owner: KapYah Industries Pvt. Ltd.
+- Website: https://www.kapyah.com/
+- Support: contact@kapyah.com
 
----
+## License and acknowledgments
 
-## Developed By
+This project includes components derived from QGroundControl and other open-source projects. Retain the included license and copyright notices when distributing modified versions.
 
-- **Durgesh Tiwari**  
-- Embedded Software Engineer  
-- KapYah Industries Pvt. Ltd.  
-- GitHub: https://github.com/bldxspark  
-- LinkedIn: https://www.linkedin.com/in/durgesh-tiwari-9bab82238  
-- Email: durgeshtiwari000x@gmail.com  
-
----
-
-## Product Overview
-
-KapYah Ground Control provides:
-
-- UAV communication and control interface  
-- mission planning and execution workflows  
-- system status monitoring and telemetry visualization  
-- Android-optimized UI for mobile and tablet devices  
-- integrated logging and diagnostics support  
-
----
-
-## Screenshots
-
-### Home Screen
-
-<p align="center">
-  <img src="resources/screenshots/kapyah-home.jpg" width="500"/>
-</p>
-
-### Home (Connected State)
-
-<p align="center">
-  <img src="resources/screenshots/kapyah-home-connected.jpg" width="500"/>
-</p>
-
-### Home (Dark Mode)
-
-<p align="center">
-  <img src="resources/screenshots/kapyah-home-dark.jpg" width="500"/>
-</p>
-
-### Settings Screen
-
-<p align="center">
-  <img src="resources/screenshots/kapyah-settings.jpg" width="500"/>
-</p>
-
-### Settings (Dark Mode)
-
-<p align="center">
-  <img src="resources/screenshots/kapyah-settings-dark.jpg" width="500"/>
-</p>
-
-## Core Features
-
-- KapYah-branded Ground Control Station interface  
-- stable MAVLink communication support  
-- responsive layouts for phone and tablet  
-- integrated logging system with dedicated storage directory  
-- configurable settings panel using structured configuration  
-- customized UI components for streamlined workflows  
-
----
-
-## Logging System
-
-KapYah GCS includes a structured logging system:
-
-- logs stored in a dedicated KapYah GCS directory  
-- log save path visible in application settings  
-- integrated file dialog for selecting save location  
-- designed for debugging, diagnostics, and field operations  
-
----
-
-## Platform Support
-
-- Android (primary deployment platform)  
-- optimized for:
-  - mobile devices  
-  - tablets  
-
----
-
-## Customization Scope
-
-This project includes multiple enhancements such as:
-
-- application-level branding and UI customization  
-- layout fixes and responsiveness improvements  
-- settings panel customization using JSON-driven configuration  
-- logging system integration and UI exposure  
-- Android-specific behavior adjustments  
-
----
-
-## Ownership
-
-- Product owner: **KapYah Industries Pvt. Ltd.**  
-- Product identity and branding: **KapYah Industries Pvt. Ltd.**  
-- Primary developer: **Durgesh Tiwari**
-
----
-
-## Repository Hygiene
-
-This repository excludes:
-
-- build outputs  
-- APK files  
-- keystore files  
-- temporary logs and generated artifacts  
-
-Only source, configuration, and required assets are maintained.
-
----
-
-## Contact
-
-- Company website: https://www.kapyah.com/  
-- Company email: contact@kapyah.com  
-- Developer email: durgeshtiwari000x@gmail.com  
-
----
-
-## License
-
-This project is dual-licensed under:
-
-- [Apache License 2.0](LICENSE_APACHE)  
-- [GNU General Public License v3.0](LICENSE_GPL)  
-
-This project includes components derived from the open-source QGroundControl project.
-
----
-
-## Acknowledgment
-
-This project builds upon the open-source QGroundControl platform and follows its development and licensing guidelines.
+- [Apache License 2.0](LICENSE_APACHE)
+- [GNU General Public License v3.0](LICENSE_GPL)
