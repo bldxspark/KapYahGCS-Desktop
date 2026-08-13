@@ -121,6 +121,14 @@ ToolIndicatorPage {
                     font.pointSize: ScreenTools.smallFontPointSize - 1
                     opacity: 0.8
                 }
+                QGCLabel {
+                    Layout.fillWidth: true
+                    horizontalAlignment: Text.AlignHCenter
+                    text: "v1.0.0"
+                    wrapMode: Text.NoWrap
+                    font.pointSize: ScreenTools.smallFontPointSize - 1
+                    opacity: 0.8
+                }
             }
         }
     }

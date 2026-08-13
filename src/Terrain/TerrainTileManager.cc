@@ -1,3 +1,11 @@
+#include <QtCore/qhash.h>
+#include <QtLocation/private/qgeotilespec_p.h>
+
+inline size_t qHash(const QGeoTileSpec& key, size_t seed = 0)
+{
+    return qHashMulti(seed, key.plugin(), key.mapId(), key.zoom(), key.x(), key.y());
+}
+
 #include "TerrainTileManager.h"
 #include "TerrainTile.h"
 #include "TerrainTileCopernicus.h"
@@ -10,7 +18,6 @@
 #include "QGCLoggingCategory.h"
 #include "QGCGeo.h"
 
-#include <QtLocation/private/qgeotilespec_p.h>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkRequest>
 

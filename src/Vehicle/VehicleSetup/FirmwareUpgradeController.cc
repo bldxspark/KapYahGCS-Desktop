@@ -19,6 +19,7 @@
 #include <QtCore/QJsonDocument>
 #include <QtCore/QJsonObject>
 #include <QtCore/QJsonArray>
+#include <QtCore/qhash.h>
 
 struct FirmwareToUrlElement_t {
     FirmwareUpgradeController::AutoPilotStackType_t     stackType;
@@ -93,11 +94,12 @@ static QMap<int, QString> px4_board_name_map {
     {7004, "cuav_x25-mega_default"}
 };
 
-uint qHash(const FirmwareUpgradeController::FirmwareIdentifier& firmwareId)
+size_t qHash(const FirmwareUpgradeController::FirmwareIdentifier& firmwareId, size_t seed = 0)
 {
-    return static_cast<uint>(( firmwareId.autopilotStackType |
-                               (firmwareId.firmwareType << 8) |
-                               (firmwareId.firmwareVehicleType << 16) ));
+    return qHashMulti(seed,
+                      firmwareId.autopilotStackType,
+                      firmwareId.firmwareType,
+                      firmwareId.firmwareVehicleType);
 }
 
 /// @Brief Constructs a new FirmwareUpgradeController Widget. This widget is used within the PX4VehicleConfig set of screens.

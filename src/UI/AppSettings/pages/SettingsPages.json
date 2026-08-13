@@ -5,7 +5,7 @@
         {
             "name": "General",
             "qml": "GeneralSettings.qml",
-            "icon": "qrc:/res/QGCLogoBlack.svg",
+            "icon": "qrc:/res/KapYahLogoBlack.svg",
             "pageDefinition": "General.SettingsUI.json"
         },
         {

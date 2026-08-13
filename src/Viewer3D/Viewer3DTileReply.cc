@@ -1,3 +1,15 @@
+#include <QtCore/qhash.h>
+#include <QtLocation/private/qgeotilespec_p.h>
+
+inline size_t qHash(const QGeoTileSpec& key, size_t seed = 0)
+{
+    return qHashMulti(seed,
+                      key.plugin(),
+                      key.mapId(),
+                      key.zoom(),
+                      key.x(),
+                      key.y());
+}
 #include "Viewer3DTileReply.h"
 
 #include "MapProvider.h"

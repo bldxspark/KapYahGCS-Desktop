@@ -186,6 +186,14 @@ Rectangle {
                 }
 
                 QGCLabel {
+                    text: "v1.0.0"
+                    color: qgcPal.text
+                    font.pointSize: ScreenTools.defaultFontPointSize * 0.85
+                    horizontalAlignment: Text.AlignHCenter
+                    Layout.fillWidth: true
+                }
+
+                QGCLabel {
                     text: "© " + _currentYear + " KapYah Industries Pvt. Ltd."
                     color: qgcPal.text
                     font.pointSize: ScreenTools.defaultFontPointSize * 0.85

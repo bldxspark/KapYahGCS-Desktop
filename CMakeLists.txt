@@ -152,7 +152,7 @@ set(CMAKE_POLICY_DEFAULT_CMP0075 NEW)
 # ============================================================================
 
 set(QGC_QT_MINIMUM_VERSION 6.10.0)
-set(QGC_QT_MAXIMUM_VERSION 6.10.3)
+set(QGC_QT_MAXIMUM_VERSION 6.11.0)
 set(QT_NO_PRIVATE_MODULE_WARNING ON)
 
 find_package(Qt6 ${QGC_QT_MINIMUM_VERSION} QUIET COMPONENTS Core)

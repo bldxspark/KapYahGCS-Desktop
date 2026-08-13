@@ -139,6 +139,13 @@ __pycache__/
 # ------------------------------------------------------------------------------
 *.log
 
+# Local release artifacts (generated from the source tree)
+build/
+distribution/
+installer/config/
+installer/packages/
+deploy/windows/*.aps
+
 # Code coverage
 *.gcov
 *.gcda

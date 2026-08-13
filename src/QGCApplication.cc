@@ -309,8 +309,8 @@ void QGCApplication::_initForNormalAppBoot()
     _qmlAppEngine->addImageProvider(_qgcImageProviderId, new QGCImageProvider());
 
     // Set the window icon now that custom plugin has a chance to override it
-#ifdef Q_OS_LINUX
-    QUrl windowIcon = QUrl("qrc:/res/qgroundcontrol.ico");
+#if defined(Q_OS_WIN) || defined(Q_OS_LINUX)
+    QUrl windowIcon = QUrl("qrc:/res/qgroundcontrol.png");
     windowIcon = _qmlAppEngine->interceptUrl(windowIcon, QQmlAbstractUrlInterceptor::UrlString);
     // The interceptor needs "qrc:/path" but QIcon expects ":/path"
     setWindowIcon(QIcon(":" + windowIcon.path()));
@@ -646,7 +646,7 @@ bool QGCApplication::compressEvent(QEvent *event, QObject *receiver, QPostEventL
             continue;
         }
         const QMetaCallEvent *cur_mce = static_cast<QMetaCallEvent*>(cur.event);
-        if (cur_mce->sender() != mce->sender() || cur_mce->signalId() != mce->signalId() || cur_mce->id() != mce->id()) {
+        if (cur_mce->sender() != mce->sender() || cur_mce->signalId() != mce->signalId()) {
             continue;
         }
         /* Keep The Newest Call */
