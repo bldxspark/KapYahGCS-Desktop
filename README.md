@@ -4,7 +4,7 @@
   <img src="resources/KapYahGCS.png" alt="KapYah GCS Logo" width="500">
 </p>
 
-KapYah GCS is a Ground Control Station application for MAVLink-enabled UAV operations. It is developed for KapYah Industries Pvt. Ltd. and is based on the open-source QGroundControl platform.
+KapYah GCS is a Ground Control Station application for MAVLink-enabled UAV operations.
 
 ## Desktop release
 
@@ -17,6 +17,10 @@ KapYahGCS-Setup.exe
 ```
 
 The installer includes the Qt and GStreamer runtime components required for the application and RTSP video streaming.
+
+### Download
+
+[Download KapYah GCS Desktop v1.0.0](http://github.com/bldxspark/KapYahGCS-Desktop/releases/download/v1.0.0-desktop/KapYahGCS-Setup.exe)
 
 ### Desktop features
 
@@ -49,12 +53,6 @@ KapYah GCS uses CMake and Qt 6. For Windows builds with RTSP support, configure 
 ```text
 GStreamer_ROOT_DIR=C:\sdk_and_dependencies\gstreamer\1.0\msvc_x86_64
 ```
-
-## Company
-
-- Product owner: KapYah Industries Pvt. Ltd.
-- Website: https://www.kapyah.com/
-- Support: contact@kapyah.com
 
 ## License and acknowledgments
 
