@@ -20,6 +20,7 @@ The installer includes the Qt and GStreamer runtime components required for the 
 
 ### Download
 
+[Android Link](https://github.com/bldxspark/KapYahGCS-Android)
 [Download KapYah GCS Desktop v1.0.0](https://github.com/bldxspark/KapYahGCS-Desktop/releases/download/v1.0.0/KapYahGCS-Setup.exe)
 ### Desktop features
 
